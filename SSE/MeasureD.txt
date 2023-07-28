@@ -1,0 +1,34 @@
+    for(LoopNumA=0;LoopNumA<ZSize;LoopNumA+=1)
+    {
+        //Factor=-1;
+        for(LoopNumB=0;LoopNumB<YSize;LoopNumB+=1)
+        {
+           Factor=-1;
+           for(LoopNumC=0;LoopNumC<XSize;LoopNumC+=1)
+           {
+            Index = (LoopNumA*SingleSpinNO*2+LoopNumB*XSize+LoopNumC)*6;
+            SingleVBSDx += (double)(Factor*SpinSystem[BondNORecord[Index]*3+1]*SpinSystem[BondNORecord[Index+1]*3+1]);
+            Factor*=-1;   
+               
+           }           
+        }        
+    }
+    for(LoopNumA=0;LoopNumA<ZSize;LoopNumA+=1)
+    {
+        Factor=-1;
+        for(LoopNumB=0;LoopNumB<YSize;LoopNumB+=1)
+        {
+           for(LoopNumC=0;LoopNumC<XSize;LoopNumC+=1)
+           {
+            Index = (LoopNumA*SingleSpinNO*2+LoopNumB*XSize+LoopNumC+SingleSpinNO)*6;
+            SingleVBSDy += (double)(Factor*SpinSystem[BondNORecord[Index]*3+1]*SpinSystem[BondNORecord[Index+1]*3+1]);
+           }
+           Factor*=-1;
+        }
+        
+    }
+    SingleVBSD=SingleVBSDx*SingleVBSDx + SingleVBSDy*SingleVBSDy;
+ 
+    VBSDx+=SingleVBSDx*0.25;
+    VBSDy+=SingleVBSDy*0.25;
+    VBSD+=SingleVBSD*0.0625;
