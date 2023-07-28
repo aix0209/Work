@@ -1,5 +1,3 @@
-# Welcome to GitHub Desktop!
-
-This is your README. READMEs are where you can communicate what your project is and how to use it.
-
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+SSE 博士班，利用C語言進行蒙地卡羅運算
+物理模擬 博士班，利用Python模擬物理問題及分析數據
+選課試作 課餘用Pyhton寫的非視覺化的排課系統
